@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Models;
 using SalesWebMvc.Data;
+using SalesWebMvc.Services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
     options.UseMySql(
@@ -14,6 +15,8 @@ builder.Services.AddControllersWithViews();
 
 // Add the SeedingService to the dependency injection system as a Scoped service, which means it will be created once per HTTP request.
 builder.Services.AddScoped<SeedingService>();
+// Add the SellerService to the dependency injection system as a Scoped service, which means it will be created once per HTTP request.
+builder.Services.AddScoped<SellerService>();
 
 var app = builder.Build();
 
