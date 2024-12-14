@@ -15,8 +15,8 @@ builder.Services.AddControllersWithViews();
 
 // Add the SeedingService to the dependency injection system as a Scoped service, which means it will be created once per HTTP request.
 builder.Services.AddScoped<SeedingService>();
-// Add the SellerService to the dependency injection system as a Scoped service, which means it will be created once per HTTP request.
 builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
 
 var app = builder.Build();
 
