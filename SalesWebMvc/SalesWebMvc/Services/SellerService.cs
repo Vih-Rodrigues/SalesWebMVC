@@ -21,7 +21,7 @@ namespace SalesWebMvc.Services
         public async Task InsertAsync(Seller obj)
         {
             _context.Add(obj);
-            await_context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Seller> FindByIdAsync(int id)
